@@ -19,7 +19,7 @@ const upload = multer({ storage });
 const apiAccountRouter = express.Router();
 
 apiAccountRouter.patch('/profilepic', upload.single('img'), async (req, res) => {
-//   await User.update({ profilePic: req.file.filename }, { where: { id: res.locals.user.id } });
+  await User.update({ img: req.file.filename }, { where: { id: res.locals.user.id } });
   res.send({ image: req.file.filename });
 });
 

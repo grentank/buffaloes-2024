@@ -2,22 +2,22 @@ import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import ProfilePicEdit from '../ui/ProfilePicEdit';
 
-export default function AccountPage() {
+export default function AccountPage({ user, amountOfTweets }) {
   return (
     <Row>
       <Col xs={4}>
-        <ProfilePicEdit />
+        <ProfilePicEdit user={user} />
       </Col>
       <Col xs={8}>
         <Row>
           <Col xs={12}>
-            <p>Name</p>
+            <p>{user.name}</p>
           </Col>
           <Col xs={12}>
-            <p>Email</p>
+            <p>{user.email}</p>
           </Col>
           <Col xs={12}>
-            <p>Total tweets</p>
+            <p>{amountOfTweets}</p>
           </Col>
         </Row>
       </Col>

@@ -4,12 +4,8 @@ import path from 'path';
 import cookieParser from 'cookie-parser';
 import 'dotenv/config';
 import jsxRender from './utils/jsxRender';
-import indexRouter from './routes/render/indexRouter';
-import apiAccountRouter from './routes/api/apiAccountRouter';
-import authRouter from './routes/render/authRouter';
-import tweetsRouter from './routes/render/tweetsRouter';
-import apiTweetsRouter from './routes/api/apiTweetsRouter';
-import apiAuthRouter from './routes/api/apiAuthRouter';
+import indexRouter from './routes/indexRouter';
+import apiRouter from './routes/apiRouter';
 import resLocals from './middlewares/resLocals';
 
 const PORT = process.env.PORT || 3000;
@@ -26,11 +22,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(resLocals);
 
-app.use('/api/account', apiAccountRouter);
-app.use('/api/tweets', apiTweetsRouter);
-app.use('/api/auth', apiAuthRouter);
-app.use('/auth', authRouter);
-app.use('/tweets', tweetsRouter);
 app.use('/', indexRouter);
+app.use('/api', apiRouter);
 
 app.listen(PORT, () => console.log(`App has started on port ${PORT}`));

@@ -2,11 +2,11 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.bulkInsert('Tweets', [
-      { body: 'Всем привет, это бот ферма', userId: null },
-      { body: 'Я камень', userId: null },
-      { body: 'Я ножницы', userId: null },
-      { body: 'Я бумага', userId: null },
-      { body: 'Ящерица и спок будут?', userId: null },
+      { body: 'Всем привет, это бот ферма', authorId: null },
+      { body: 'Я камень', authorId: null },
+      { body: 'Я ножницы', authorId: null },
+      { body: 'Я бумага', authorId: null },
+      { body: 'Ящерица и спок будут?', authorId: null },
     ], {});
   },
 
