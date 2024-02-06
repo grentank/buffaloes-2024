@@ -7,8 +7,9 @@ const apiTweetsRouter = express.Router();
 
 apiTweetsRouter
   .route('/')
-  .get((req, res) => {
-    res.json([]);
+  .get(async (req, res) => {
+    const tweets = await Tweet.findAll({ include: User });
+    res.json(tweets);
   })
   .post(verifyAccessToken, async (req, res) => {
     const newTweet = await Tweet.create({

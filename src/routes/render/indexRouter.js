@@ -13,6 +13,8 @@ router.get('/account', redirectIfNotAuth, async (req, res) => {
   res.render('AccountPage', { amountOfTweets: userWithTweets.Tweets.length });
 });
 
+router.get('/effect', (req, res) => res.render('EffectPage'));
+
 router.get('*', (req, res) => res.render('NotFoundPage'));
 
 export default router;

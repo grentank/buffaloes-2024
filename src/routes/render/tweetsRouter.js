@@ -9,6 +9,10 @@ tweetsRouter.get('/', redirectIfNotAuth, async (req, res) => {
   res.render('TweetsPage', { tweets });
 });
 
+tweetsRouter.get('/client', redirectIfNotAuth, (req, res) => {
+  res.render('TweetsClientPage');
+});
+
 tweetsRouter.get('/:id', (req, res) => res.render('NotFoundPage'));
 
 export default tweetsRouter;

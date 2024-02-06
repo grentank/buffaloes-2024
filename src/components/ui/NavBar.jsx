@@ -18,9 +18,11 @@ export default function NavBar({ user }) {
         <Navbar.Brand href="/">{user?.id ? user.name : 'Guest'}</Navbar.Brand>
         <Nav className="me-auto">
           <Nav.Link href="/">Home</Nav.Link>
+          <Nav.Link href="/effect">Effect</Nav.Link>
           {user?.id ? (
             <>
               <Nav.Link href="/tweets">Tweets</Nav.Link>
+              <Nav.Link href="/tweets/client">Client Tweets</Nav.Link>
               <Nav.Link href="/account">Account</Nav.Link>
               <Nav.Link as={Button} onClick={logoutHandler}>Logout</Nav.Link>
             </>
